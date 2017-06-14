@@ -43,10 +43,10 @@ ES_HOME=/usr/local/$NAME
 #ES_JAVA_OPTS=
 
 # Maximum number of open files
-MAX_OPEN_FILES='<%= node[:elasticsearch][:limits][:nofile] %>'
+MAX_OPEN_FILES=<%= node[:elasticsearch][:limits][:nofile] %>
 
 # Maximum amount of locked memory
-MAX_LOCKED_MEMORY='<%= node[:elasticsearch][:limits][:memlock] %>'
+MAX_LOCKED_MEMORY=<%= node[:elasticsearch][:limits][:memlock] %>
 
 # Elasticsearch log directory
 LOG_DIR=/usr/local/log/$NAME
@@ -61,7 +61,7 @@ CONF_DIR=/usr/local/$NAME
 MAX_MAP_COUNT=262144
 
 # Elasticsearch PID file directory
-PID_DIR="/var/local/var/run"
+PID_DIR="/usr/local/var/run"
 
 # End of variables that can be overwritten in $DEFAULT
 
@@ -77,7 +77,7 @@ if [ ! -z "$CONF_FILE" ]; then
 fi
 
 # Define other required variables
-PID_FILE='$PID_DIR/<%= node.elasticsearch[:pid_file] %>'
+PID_FILE='<%= node.elasticsearch[:pid_file] %>'
 DAEMON=$ES_HOME/bin/elasticsearch
 DAEMON_OPTS="-d -p $PID_FILE -Edefault.path.logs=$LOG_DIR -Edefault.path.data=$DATA_DIR -Edefault.path.conf=$CONF_DIR"
 
