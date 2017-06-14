@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # /etc/init.d/<%= node[:elasticsearch][:user] %> -- startup script for Elasticsearch
 #
@@ -74,9 +74,9 @@ if [ ! -z "$CONF_FILE" ]; then
 fi
 
 # Define other required variables
-PID_FILE="<%= node.elasticsearch[:pid_file] %>""
+PID_FILE="<%= node.elasticsearch[:pid_file] %>"
 DAEMON=$ES_HOME/bin/elasticsearch
-DAEMON_OPTS="-d -p $PID_FILE -Edefault.path.logs=$LOG_DIR -Edefault.path.data=$DATA_DIR -Edefault.path.conf=$CONF_DIR"
+DAEMON_OPTS="-d -p $PID_FILE --default.path.home=$ES_HOME --default.path.logs=$LOG_DIR --default.path.data=$DATA_DIR --default.path.conf=$CONF_DIR"
 
 # This is the default env file with pre-configured parameters.
 ES_ENV_FILE="<%= node.elasticsearch[:path][:conf] %>/elasticsearch-env.sh"
