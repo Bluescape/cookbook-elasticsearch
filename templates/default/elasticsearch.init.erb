@@ -49,7 +49,7 @@ MAX_LOCKED_MEMORY=<%= node[:elasticsearch][:limits][:memlock] %>
 LOCAL_DIR=/usr/local
 
 # Elasticsearch log directory
-LOG_DIR=$LOCAL_DIR/log/$NAME
+LOG_DIR=$LOCAL_DIR/var/log/$NAME
 
 # Elasticsearch data directory
 DATA_DIR=/data
