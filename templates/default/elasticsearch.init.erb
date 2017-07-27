@@ -56,7 +56,8 @@ DATA_DIR=/data
 
 # Elasticsearch configuration directory
 #CONF_DIR=$LOCAL_DIR/$NAME/config
-CONF_DIR="/usr/local/etc/elasticsearch"
+#CONF_DIR="/usr/local/etc/elasticsearch"
+CONF_DIR=<%= node[:elasticsearch][:path][:conf] %>
 
 # Maximum number of VMA (Virtual Memory Areas) a process can own
 MAX_MAP_COUNT=262144
