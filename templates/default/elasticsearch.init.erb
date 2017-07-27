@@ -49,11 +49,9 @@ MAX_LOCKED_MEMORY=<%= node[:elasticsearch][:limits][:memlock] %>
 LOCAL_DIR=/usr/local
 
 # Elasticsearch log directory
-#LOG_DIR=$LOCAL_DIR/var/log/$NAME
 LOG_DIR=<%= node[:elasticsearch][:path][:logs] %>
 
 # Elasticsearch data directory
-#DATA_DIR=/data
 DATA_DIR=<%= node[:elasticsearch][:path][:data] %> 
 
 # Elasticsearch configuration directory
@@ -63,8 +61,7 @@ CONF_DIR=<%= node[:elasticsearch][:path][:conf] %>
 MAX_MAP_COUNT=262144
 
 # Elasticsearch PID file directory
-#PID_DIR="$LOCAL_DIR/var/run"
-PID_DIR=<%= node[:elasticsearch][:pid_file] %>
+PID_DIR=<%= node[:elasticsearch][:pid_path] %>
 
 # End of variables that can be overwritten in $DEFAULT
 
