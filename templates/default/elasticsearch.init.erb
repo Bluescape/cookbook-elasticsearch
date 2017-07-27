@@ -53,7 +53,8 @@ LOCAL_DIR=/usr/local
 LOG_DIR=<%= node[:elasticsearch][:path][:logs] %>
 
 # Elasticsearch data directory
-DATA_DIR=/data
+#DATA_DIR=/data
+DATA_DIR=<%= node[:elasticsearch][:path][:data] %> 
 
 # Elasticsearch configuration directory
 CONF_DIR=<%= node[:elasticsearch][:path][:conf] %>
