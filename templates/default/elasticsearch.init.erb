@@ -37,7 +37,7 @@ ES_USER=<%= node[:elasticsearch][:user] %>
 ES_GROUP=<%= node[:elasticsearch][:user] %>
 
 # Directory where the Elasticsearch binary distribution resides
-ES_HOME=/usr/local/$NAME
+ES_HOME="<%= node[:elasticsearch][:dir] %>/$NAME"
 
 # Maximum number of open files
 MAX_OPEN_FILES=<%= node[:elasticsearch][:limits][:nofile] %>
